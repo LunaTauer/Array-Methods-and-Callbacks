@@ -43,7 +43,12 @@ console.log(year2014[0]["Home Team Goals"])
 console.log(year2014[0]["Away Team Goals"])
 
 //(e) Winner of 2014 world cup final */
-
+let winner2014 = fifaData
+if (winner2014[0]["Home Team Goals"] > winner2014[0]["Away Team Goals"]){
+    console.log(winner2014[0]["Home Team Name"])
+}else {
+    console.log(winner2014[0]["Away Team Name"])
+}
  
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,7 +86,13 @@ Use the higher-order function getWinners to do the following:
 4. Returns the names of all winning countries in an array called `winners` */ 
 
 function getWinners(arr,getFinals) {
-    /* code here */
+    return getFinals(arr).map (i=>{
+        if (i["Home Team Goals"] > i["Away Team Goals"]){
+            return i["Home Team Name"];
+        }else {
+            return i["Away Team Name"];
+        }
+    });
 }
 
 
